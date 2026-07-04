@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17211c" />
+    <meta name="description" content="Kuchnie na wymiar projektowane i wykonywane w Małopolsce. Bezpłatna konsultacja, indywidualny projekt i montaż." />
+    <meta property="og:title" content="FORMA — Kuchnie na wymiar" />
+    <meta property="og:description" content="Tworzymy kuchnie, do których chce się wracać." />
+    <title>FORMA — Kuchnie na wymiar w Małopolsce</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="FORMA — strona główna">
+        <svg viewBox="0 0 34 34" aria-hidden="true"><path d="M5 5h24v24H5zM11 11h12v12H11z"/></svg>
+        <span>FORMA<small>kuchnie na wymiar</small></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Główna nawigacja">
+        <a href="#realizacje">Realizacje</a><a href="#oferta">Oferta</a><a href="#proces">Jak pracujemy</a><a href="#opinie">Opinie</a><a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="header-cta" href="#kalkulator">Wyceń swoją kuchnię <span>↗</span></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Otwórz menu"><span></span><span></span></button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-shade" aria-hidden="true"></div>
+        <div class="hero-content container">
+          <p class="eyebrow light"><span></span> Projektujemy · wykonujemy · montujemy</p>
+          <h1 id="hero-title">Kuchnia, która<br/><em>pasuje do Ciebie.</em></h1>
+          <p class="hero-lead">Meble tworzone na centymetry. Przemyślany projekt, szlachetne materiały i opieka jednego zespołu — od pomiaru po montaż.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#kontakt">Umów bezpłatną konsultację <span>↗</span></a>
+            <a class="text-link light" href="#realizacje">Zobacz realizacje <span>↓</span></a>
+          </div>
+        </div>
+        <div class="hero-bottom container">
+          <div><strong>12+</strong><span>lat doświadczenia</span></div>
+          <div><strong>340</strong><span>zrealizowanych wnętrz</span></div>
+          <div><strong>4.9</strong><span>średnia ocen klientów</span></div>
+          <p>Małopolska i okolice<br/><b>Kraków · Wieliczka · Bochnia</b></p>
+        </div>
+      </section>
+
+      <section class="intro section container">
+        <div>
+          <p class="eyebrow"><span></span> Meble, które mają znaczenie</p>
+          <h2>Nie robimy kuchni<br/>z <em>katalogu.</em></h2>
+        </div>
+        <div class="intro-copy">
+          <p>Każde wnętrze zaczynamy od rozmowy. Poznajemy Twój rytm dnia, potrzeby i przyzwyczajenia. Dopiero potem powstaje projekt — dopracowany wizualnie, funkcjonalny i tylko Twój.</p>
+          <a class="text-link" href="#proces">Poznaj nasze podejście <span>→</span></a>
+        </div>
+      </section>
+
+      <section class="projects section" id="realizacje">
+        <div class="section-head container">
+          <div><p class="eyebrow"><span></span> Wybrane realizacje</p><h2>Wnętrza z <em>charakterem.</em></h2></div>
+          <div class="filters" role="group" aria-label="Filtr realizacji">
+            <button class="active" data-filter="all">Wszystkie</button><button data-filter="nowoczesne">Nowoczesne</button><button data-filter="klasyczne">Klasyczne</button><button data-filter="minimalizm">Minimalizm</button>
+          </div>
+        </div>
+        <div class="project-grid container">
+          <article class="project-card project-large" data-category="nowoczesne">
+            <div class="project-img project-img-1"><span class="project-no">01</span></div>
+            <div class="project-meta"><div><h3>Ciepły minimalizm</h3><p>Kraków · Dębniki</p></div><span>fornir dębowy · spiek kwarcowy</span><a href="#kontakt" aria-label="Zobacz realizację Ciepły minimalizm">↗</a></div>
+          </article>
+          <article class="project-card" data-category="minimalizm">
+            <div class="project-img project-img-2"><span class="project-no">02</span></div>
+            <div class="project-meta"><div><h3>Monochrom</h3><p>Niepołomice</p></div><span>matowy lakier · kompakt</span><a href="#kontakt" aria-label="Zobacz realizację Monochrom">↗</a></div>
+          </article>
+          <article class="project-card" data-category="klasyczne">
+            <div class="project-img project-img-3"><span class="project-no">03</span></div>
+            <div class="project-meta"><div><h3>Jasny klasyk</h3><p>Wieliczka</p></div><span>lakier frezowany · kamień</span><a href="#kontakt" aria-label="Zobacz realizację Jasny klasyk">↗</a></div>
+          </article>
+        </div>
+        <a class="btn btn-outline projects-more" href="#kontakt">Zobacz wszystkie realizacje <span>→</span></a>
+      </section>
+
+      <section class="process section" id="proces">
+        <div class="container">
+          <div class="section-head process-head"><div><p class="eyebrow light"><span></span> Od pomysłu do wnętrza</p><h2>Spokojny proces.<br/><em>Dobry efekt.</em></h2></div><p>Jeden zespół prowadzi Cię przez każdy etap. Wiesz, co dzieje się z projektem i kiedy Twoja kuchnia będzie gotowa.</p></div>
+          <div class="steps">
+            <article><span>01</span><i>↗</i><h3>Rozmowa i pomiar</h3><p>Spotykamy się, poznajemy potrzeby i dokładnie mierzymy wnętrze.</p></article>
+            <article><span>02</span><i>⌁</i><h3>Projekt i wycena</h3><p>Tworzymy wizualizację, dobieramy materiały i przedstawiamy jasny kosztorys.</p></article>
+            <article><span>03</span><i>◇</i><h3>Produkcja</h3><p>Twoje meble powstają lokalnie pod okiem doświadczonych stolarzy.</p></article>
+            <article><span>04</span><i>✓</i><h3>Montaż i odbiór</h3><p>Montujemy, regulujemy i zostawiamy gotowe, czyste wnętrze.</p></article>
+          </div>
+          <div class="process-note"><span>Średni czas realizacji</span><strong>8–10 tygodni</strong><small>od akceptacji projektu</small></div>
+        </div>
+      </section>
+
+      <section class="offer section container" id="oferta">
+        <div class="offer-visual"><div class="sample-card"><span>PRÓBNIK 04</span><b>Orzech naturalny</b></div></div>
+        <div class="offer-copy">
+          <p class="eyebrow"><span></span> Więcej niż kuchnie</p>
+          <h2>Całe wnętrze.<br/><em>Jeden język.</em></h2>
+          <p>Projektujemy spójne meble do całego domu — w tych samych materiałach, detalach i jakości wykonania.</p>
+          <div class="service-list">
+            <a href="#kontakt"><span>01</span>Szafy i garderoby<i>↗</i></a>
+            <a href="#kontakt"><span>02</span>Meble łazienkowe<i>↗</i></a>
+            <a href="#kontakt"><span>03</span>Zabudowy salonu<i>↗</i></a>
+            <a href="#kontakt"><span>04</span>Biura i lokale<i>↗</i></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="calculator section" id="kalkulator">
+        <div class="container calculator-grid">
+          <div class="calc-copy">
+            <p class="eyebrow light"><span></span> Wstępna wycena</p>
+            <h2>Sprawdź budżet<br/>swojej <em>kuchni.</em></h2>
+            <p>Wybierz podstawowe parametry. Wynik jest orientacyjny — dokładną wycenę przygotujemy po bezpłatnej konsultacji.</p>
+            <div class="calc-result"><span>Szacowany przedział</span><strong id="price-result">35 000 – 45 000 zł</strong><small>projekt, produkcja i montaż</small></div>
+          </div>
+          <form class="calc-form" id="calc-form">
+            <fieldset><legend>1. Wybierz układ kuchni</legend><div class="layout-options">
+              <label><input type="radio" name="layout" value="1" checked><span><i>━</i>Prosta</span></label>
+              <label><input type="radio" name="layout" value="1.25"><span><i>┗</i>Narożna</span></label>
+              <label><input type="radio" name="layout" value="1.55"><span><i>⊔</i>W kształcie U</span></label>
+              <label><input type="radio" name="layout" value="1.75"><span><i>▰</i>Z wyspą</span></label>
+            </div></fieldset>
+            <fieldset><legend>2. Długość zabudowy <output id="length-output">5,0 m</output></legend><input id="length" type="range" min="2" max="10" value="5" step="0.5"><div class="range-labels"><span>2 m</span><span>10 m</span></div></fieldset>
+            <fieldset><legend>3. Standard wykończenia</legend><div class="finish-options"><label><input type="radio" name="finish" value="0.8"><span>Dobry<small>laminat · standard</small></span></label><label><input type="radio" name="finish" value="1" checked><span>Premium<small>lakier · fornir</small></span></label><label><input type="radio" name="finish" value="1.45"><span>Exclusive<small>kamień · lite drewno</small></span></label></div></fieldset>
+            <a href="#kontakt" class="btn btn-primary calc-submit">Otrzymaj dokładną wycenę <span>→</span></a>
+          </form>
+        </div>
+      </section>
+
+      <section class="testimonial section container" id="opinie">
+        <div class="quote-mark">“</div>
+        <blockquote>Od pierwszego spotkania czuliśmy, że ktoś naprawdę nas słucha. Kuchnia jest piękna, ale przede wszystkim <em>działa dokładnie tak, jak żyjemy.</em></blockquote>
+        <div class="testimonial-author"><div class="avatar">AK</div><div><strong>Anna i Krzysztof</strong><span>Kraków · realizacja 2025</span></div><div class="stars">★★★★★ <small>5.0</small></div></div>
+        <div class="review-nav"><button aria-label="Poprzednia opinia">←</button><span>01 / 03</span><button aria-label="Następna opinia">→</button></div>
+      </section>
+
+      <section class="faq section container">
+        <div><p class="eyebrow"><span></span> Pytania i odpowiedzi</p><h2>Zanim<br/><em>zaczniemy.</em></h2><p>Nie widzisz odpowiedzi? Napisz — odpowiemy bez branżowego żargonu.</p><a class="text-link" href="mailto:studio@forma-kuchnie.pl">Zadaj własne pytanie <span>→</span></a></div>
+        <div class="accordion">
+          <article class="open"><button aria-expanded="true"><span>01</span>Czy pomiar i projekt są płatne?<i>−</i></button><p>Wstępna konsultacja i pomiar są bezpłatne. Koszt pełnego projektu odliczamy od wartości zamówienia po podpisaniu umowy.</p></article>
+          <article><button aria-expanded="false"><span>02</span>Ile trwa realizacja kuchni?<i>+</i></button><p>Najczęściej od 8 do 10 tygodni od zaakceptowania projektu i materiałów. Dokładny termin wpisujemy do umowy.</p></article>
+          <article><button aria-expanded="false"><span>03</span>Czy pomagacie w doborze sprzętu AGD?<i>+</i></button><p>Tak. Dobieramy sprzęt do projektu, budżetu i sposobu, w jaki korzystasz z kuchni. Możemy też skoordynować jego dostawę.</p></article>
+          <article><button aria-expanded="false"><span>04</span>Na jakim terenie realizujecie zamówienia?<i>+</i></button><p>Pracujemy głównie w Krakowie i Małopolsce. Większe realizacje prowadzimy również w innych regionach Polski.</p></article>
+        </div>
+      </section>
+
+      <section class="contact section" id="kontakt">
+        <div class="container contact-grid">
+          <div><p class="eyebrow light"><span></span> Zacznijmy od rozmowy</p><h2>Opowiedz nam<br/>o swoim <em>wnętrzu.</em></h2><p>Odezwiemy się w ciągu jednego dnia roboczego. Bez zobowiązań i bez automatycznych ofert.</p><div class="contact-data"><a href="tel:+48500190290">+48 500 190 290</a><a href="mailto:studio@forma-kuchnie.pl">studio@forma-kuchnie.pl</a></div></div>
+          <form class="contact-form" id="contact-form">
+            <label>Imię i nazwisko<input type="text" name="name" placeholder="Jak mamy się do Ciebie zwracać?" required></label>
+            <label>Telefon lub e-mail<input type="text" name="contact" placeholder="Twój kontakt" required></label>
+            <label>Opowiedz krótko o projekcie<textarea name="message" rows="3" placeholder="Lokalizacja, metraż, planowany termin..."></textarea></label>
+            <label class="consent"><input type="checkbox" required><span>Akceptuję politykę prywatności i zgodę na kontakt.</span></label>
+            <button type="submit" class="btn btn-cream">Wyślij zapytanie <span>→</span></button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-main container"><a class="brand footer-brand" href="#top"><svg viewBox="0 0 34 34"><path d="M5 5h24v24H5zM11 11h12v12H11z"/></svg><span>FORMA<small>kuchnie na wymiar</small></span></a><p>Projektujemy i wykonujemy meble na wymiar w Krakowie i Małopolsce.</p><div class="footer-links"><div><b>Odkrywaj</b><a href="#realizacje">Realizacje</a><a href="#oferta">Oferta</a><a href="#proces">O nas</a></div><div><b>Kontakt</b><a href="tel:+48500190290">Telefon</a><a href="mailto:studio@forma-kuchnie.pl">E-mail</a><a href="#kontakt">Instagram</a></div></div></div>
+      <div class="footer-bottom container"><span>© 2026 FORMA. Wszystkie prawa zastrzeżone.</span><div><a href="#">Polityka prywatności</a><a href="#">Cookies</a></div><a href="#top">Do góry ↑</a></div>
+    </footer>
+    <a class="floating-contact" href="#kontakt" aria-label="Napisz do nas"><span>✦</span><b>Porozmawiajmy</b></a>
+    <div class="toast" id="toast" role="status">Dziękujemy! Odezwemy się w ciągu 1 dnia roboczego.</div>
+    <script src="script.js"></script>
+  </body>
+</html>

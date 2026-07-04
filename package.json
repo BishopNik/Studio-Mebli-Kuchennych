@@ -1,0 +1,13 @@
+{
+  "name": "forma-kuchnie",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium landing page for a made-to-measure kitchen studio in Poland",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
