@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>FORMA — panel redakcyjny</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <aside class="admin-sidebar">
+      <a class="admin-brand" href="index.html"><svg viewBox="0 0 34 34"><path d="M5 5h24v24H5zM11 11h12v12H11z"/></svg><span>FORMA<small>panel redakcyjny</small></span></a>
+      <nav aria-label="Panel redakcyjny">
+        <button class="active" data-admin-tab="dashboard"><span>⌂</span>Pulpit</button>
+        <button data-admin-tab="posts"><span>✎</span>Nowości i fakty</button>
+        <button data-admin-tab="questions"><span>?</span>Pytania <b id="question-badge">0</b></button>
+        <button data-admin-tab="reviews"><span>★</span>Opinie <b id="review-badge">0</b></button>
+      </nav>
+      <a class="view-site" href="index.html">← Zobacz stronę</a>
+      <p>Dane tej wersji są przechowywane lokalnie w przeglądarce.</p>
+    </aside>
+    <main class="admin-main">
+      <header><div><p id="admin-kicker">Przegląd</p><h1 id="admin-title">Dzień dobry 👋</h1></div><span id="today"></span></header>
+
+      <section class="admin-panel active" data-panel="dashboard">
+        <div class="stat-grid">
+          <article><span>Opublikowane materiały</span><strong id="stat-posts">0</strong><small>poradniki i nowości</small></article>
+          <article><span>Pytania do odpowiedzi</span><strong id="stat-questions">0</strong><small>w kolejce moderacji</small></article>
+          <article><span>Opinie do akceptacji</span><strong id="stat-reviews">0</strong><small>od klientów</small></article>
+          <article><span>Zapisane inspiracje</span><strong id="stat-favorites">0</strong><small>na tym urządzeniu</small></article>
+        </div>
+        <div class="admin-card welcome-card"><div><p class="admin-eyebrow">Szybki start</p><h2>Podziel się tym, co dzieje się w pracowni.</h2><p>Nowy materiał, ciekawy detal albo praktyczna wskazówka budują zaufanie lepiej niż kolejny slogan.</p><button class="admin-primary" type="button" data-go-tab="posts">Dodaj publikację →</button></div><div class="welcome-mark">F.</div></div>
+      </section>
+
+      <section class="admin-panel" data-panel="posts">
+        <div class="panel-grid">
+          <form class="admin-card editor-form" id="post-form">
+            <p class="admin-eyebrow">Nowa publikacja</p><h2>Dodaj nowość lub ciekawy fakt</h2>
+            <label>Tytuł<input name="title" required placeholder="Krótko i konkretnie"></label>
+            <div class="form-row"><label>Kategoria<select name="category"><option>Materiały</option><option>Projektowanie</option><option>Trendy</option><option>Z pracowni</option><option>Pielęgnacja</option></select></label><label>Czas czytania<input name="readTime" value="4 min" required></label></div>
+            <label>Krótki opis<textarea name="excerpt" rows="4" required placeholder="Co czytelnik wyniesie z tego materiału?"></textarea></label>
+            <label class="checkbox"><input type="checkbox" name="published" checked><span>Opublikuj od razu na stronie</span></label>
+            <button class="admin-primary" type="submit">Zapisz publikację</button>
+          </form>
+          <div class="admin-card content-list"><div class="card-heading"><div><p class="admin-eyebrow">Biblioteka</p><h2>Materiały</h2></div><span id="post-count"></span></div><div id="admin-posts-list"></div></div>
+        </div>
+      </section>
+
+      <section class="admin-panel" data-panel="questions">
+        <div class="admin-card content-list full"><div class="card-heading"><div><p class="admin-eyebrow">Moderacja</p><h2>Pytania klientów</h2></div><span>Odpowiedz i opublikuj</span></div><div id="admin-questions-list"></div></div>
+      </section>
+
+      <section class="admin-panel" data-panel="reviews">
+        <div class="admin-card content-list full"><div class="card-heading"><div><p class="admin-eyebrow">Moderacja</p><h2>Opinie klientów</h2></div><span>Sprawdź przed publikacją</span></div><div id="admin-reviews-list"></div></div>
+      </section>
+    </main>
+    <div class="admin-toast" id="admin-toast" role="status"></div>
+    <script src="content-store.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>

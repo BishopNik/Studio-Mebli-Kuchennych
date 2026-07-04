@@ -21,7 +21,7 @@
         <span>FORMA<small>kuchnie na wymiar</small></span>
       </a>
       <nav class="nav" id="nav" aria-label="Główna nawigacja">
-        <a href="#realizacje">Realizacje</a><a href="#oferta">Oferta</a><a href="#proces">Jak pracujemy</a><a href="#opinie">Opinie</a><a href="#kontakt">Kontakt</a>
+        <a href="#realizacje">Realizacje</a><a href="#poradnik">Poradnik</a><a href="#pytania">Pytania</a><a href="#opinie">Opinie</a><a href="#kontakt">Kontakt</a>
       </nav>
       <a class="header-cta" href="#kalkulator">Wyceń swoją kuchnię <span>↗</span></a>
       <button class="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Otwórz menu"><span></span><span></span></button>
@@ -67,20 +67,30 @@
           </div>
         </div>
         <div class="project-grid container">
-          <article class="project-card project-large" data-category="nowoczesne">
+          <article class="project-card project-large" data-project="0" data-category="nowoczesne" data-title="Ciepły minimalizm" data-location="Kraków · Dębniki" data-material="Fornir dębowy · spiek kwarcowy" data-image="assets/hero-kitchen.jpg" data-description="Kuchnia otwarta na salon, zaprojektowana wokół dużej wyspy. Ciepły fornir równoważy jasny kamień, a pełna zabudowa ukrywa sprzęty i spiżarnię.">
             <div class="project-img project-img-1"><span class="project-no">01</span></div>
-            <div class="project-meta"><div><h3>Ciepły minimalizm</h3><p>Kraków · Dębniki</p></div><span>fornir dębowy · spiek kwarcowy</span><a href="#kontakt" aria-label="Zobacz realizację Ciepły minimalizm">↗</a></div>
+            <div class="project-meta"><div><h3>Ciepły minimalizm</h3><p>Kraków · Dębniki</p></div><span>fornir dębowy · spiek kwarcowy</span><div class="project-actions"><button class="favorite-project" aria-label="Dodaj Ciepły minimalizm do ulubionych">♡</button><button class="open-project" aria-label="Zobacz realizację Ciepły minimalizm">↗</button></div></div>
           </article>
-          <article class="project-card" data-category="minimalizm">
+          <article class="project-card" data-project="1" data-category="minimalizm" data-title="Monochrom" data-location="Niepołomice" data-material="Matowy lakier · blat kompaktowy" data-image="assets/gallery-kitchen.jpg" data-description="Spokojna, oliwkowa zabudowa w historycznym wnętrzu. Proste fronty i delikatne mosiężne detale zostawiają pierwszeństwo proporcjom pomieszczenia.">
             <div class="project-img project-img-2"><span class="project-no">02</span></div>
-            <div class="project-meta"><div><h3>Monochrom</h3><p>Niepołomice</p></div><span>matowy lakier · kompakt</span><a href="#kontakt" aria-label="Zobacz realizację Monochrom">↗</a></div>
+            <div class="project-meta"><div><h3>Monochrom</h3><p>Niepołomice</p></div><span>matowy lakier · kompakt</span><div class="project-actions"><button class="favorite-project" aria-label="Dodaj Monochrom do ulubionych">♡</button><button class="open-project" aria-label="Zobacz realizację Monochrom">↗</button></div></div>
           </article>
-          <article class="project-card" data-category="klasyczne">
+          <article class="project-card" data-project="2" data-category="klasyczne" data-title="Jasny klasyk" data-location="Wieliczka" data-material="Lakier frezowany · kamień" data-image="assets/gallery-kitchen.jpg" data-description="Współczesna interpretacja klasycznej kuchni: subtelnie frezowane fronty, kamienny blat i ergonomiczny układ dla pięcioosobowej rodziny.">
             <div class="project-img project-img-3"><span class="project-no">03</span></div>
-            <div class="project-meta"><div><h3>Jasny klasyk</h3><p>Wieliczka</p></div><span>lakier frezowany · kamień</span><a href="#kontakt" aria-label="Zobacz realizację Jasny klasyk">↗</a></div>
+            <div class="project-meta"><div><h3>Jasny klasyk</h3><p>Wieliczka</p></div><span>lakier frezowany · kamień</span><div class="project-actions"><button class="favorite-project" aria-label="Dodaj Jasny klasyk do ulubionych">♡</button><button class="open-project" aria-label="Zobacz realizację Jasny klasyk">↗</button></div></div>
           </article>
         </div>
-        <a class="btn btn-outline projects-more" href="#kontakt">Zobacz wszystkie realizacje <span>→</span></a>
+        <p class="gallery-hint">Kliknij strzałkę, aby otworzyć opis i zdjęcie realizacji. Serduszkiem zapiszesz inspirację na później.</p>
+      </section>
+
+      <section class="journal section" id="poradnik">
+        <div class="container">
+          <div class="section-head">
+            <div><p class="eyebrow"><span></span> Nowości i wiedza</p><h2>Dobrze wiedzieć<br/><em>przed remontem.</em></h2></div>
+            <p class="section-intro">Krótkie, konkretne materiały od projektantów i stolarzy — bez marketingowego żargonu.</p>
+          </div>
+          <div class="journal-grid" id="posts-list" aria-live="polite"></div>
+        </div>
       </section>
 
       <section class="process section" id="proces">
@@ -133,21 +143,35 @@
         </div>
       </section>
 
-      <section class="testimonial section container" id="opinie">
-        <div class="quote-mark">“</div>
-        <blockquote>Od pierwszego spotkania czuliśmy, że ktoś naprawdę nas słucha. Kuchnia jest piękna, ale przede wszystkim <em>działa dokładnie tak, jak żyjemy.</em></blockquote>
-        <div class="testimonial-author"><div class="avatar">AK</div><div><strong>Anna i Krzysztof</strong><span>Kraków · realizacja 2025</span></div><div class="stars">★★★★★ <small>5.0</small></div></div>
-        <div class="review-nav"><button aria-label="Poprzednia opinia">←</button><span>01 / 03</span><button aria-label="Następna opinia">→</button></div>
+      <section class="reviews section" id="opinie">
+        <div class="container">
+          <div class="community-head">
+            <div><p class="eyebrow"><span></span> Głosy klientów</p><h2>Wasze wnętrza.<br/><em>Wasze opinie.</em></h2></div>
+            <div class="rating-summary"><strong id="rating-average">4.9</strong><span class="stars">★★★★★</span><small>zweryfikowane realizacje</small></div>
+          </div>
+          <div class="reviews-grid" id="reviews-list" aria-live="polite"></div>
+          <button class="btn btn-outline center-button" type="button" data-open-dialog="review-dialog">Dodaj swoją opinię <span>＋</span></button>
+        </div>
       </section>
 
-      <section class="faq section container">
-        <div><p class="eyebrow"><span></span> Pytania i odpowiedzi</p><h2>Zanim<br/><em>zaczniemy.</em></h2><p>Nie widzisz odpowiedzi? Napisz — odpowiemy bez branżowego żargonu.</p><a class="text-link" href="mailto:studio@forma-kuchnie.pl">Zadaj własne pytanie <span>→</span></a></div>
-        <div class="accordion">
-          <article class="open"><button aria-expanded="true"><span>01</span>Czy pomiar i projekt są płatne?<i>−</i></button><p>Wstępna konsultacja i pomiar są bezpłatne. Koszt pełnego projektu odliczamy od wartości zamówienia po podpisaniu umowy.</p></article>
-          <article><button aria-expanded="false"><span>02</span>Ile trwa realizacja kuchni?<i>+</i></button><p>Najczęściej od 8 do 10 tygodni od zaakceptowania projektu i materiałów. Dokładny termin wpisujemy do umowy.</p></article>
-          <article><button aria-expanded="false"><span>03</span>Czy pomagacie w doborze sprzętu AGD?<i>+</i></button><p>Tak. Dobieramy sprzęt do projektu, budżetu i sposobu, w jaki korzystasz z kuchni. Możemy też skoordynować jego dostawę.</p></article>
-          <article><button aria-expanded="false"><span>04</span>Na jakim terenie realizujecie zamówienia?<i>+</i></button><p>Pracujemy głównie w Krakowie i Małopolsce. Większe realizacje prowadzimy również w innych regionach Polski.</p></article>
+      <section class="questions section" id="pytania">
+        <div class="container">
+          <div class="community-head">
+            <div><p class="eyebrow light"><span></span> Baza wiedzy</p><h2>Zapytaj.<br/><em>Odpowiemy konkretnie.</em></h2></div>
+            <p>Przeszukaj odpowiedzi projektantów albo zadaj własne pytanie. Najciekawsze rozmowy zostają tutaj dla innych.</p>
+          </div>
+          <div class="question-tools">
+            <label class="search-field"><span>⌕</span><input id="question-search" type="search" placeholder="Szukaj, np. blat, zawiasy, koszt…" aria-label="Szukaj w pytaniach"></label>
+            <div class="question-categories" role="group" aria-label="Kategorie pytań"><button class="active" data-question-category="all">Wszystkie</button><button data-question-category="koszt">Koszt</button><button data-question-category="materialy">Materiały</button><button data-question-category="realizacja">Realizacja</button></div>
+            <button class="btn btn-primary" type="button" data-open-dialog="question-dialog">Zadaj pytanie <span>＋</span></button>
+          </div>
+          <div class="question-list" id="questions-list" aria-live="polite"></div>
         </div>
+      </section>
+
+      <section class="status-check section container">
+        <div><p class="eyebrow"><span></span> Strefa klienta</p><h2>Sprawdź etap<br/><em>swojej realizacji.</em></h2><p>Wpisz numer projektu otrzymany od opiekuna. Wersja demonstracyjna działa z numerem <strong>FM-2026-184</strong>.</p></div>
+        <form id="status-form" class="status-form"><label>Numer projektu<input name="projectCode" placeholder="np. FM-2026-184" required></label><button class="btn btn-primary" type="submit">Sprawdź status <span>→</span></button><div id="status-result" class="status-result" aria-live="polite"></div></form>
       </section>
 
       <section class="contact section" id="kontakt">
@@ -165,11 +189,15 @@
     </main>
 
     <footer>
-      <div class="footer-main container"><a class="brand footer-brand" href="#top"><svg viewBox="0 0 34 34"><path d="M5 5h24v24H5zM11 11h12v12H11z"/></svg><span>FORMA<small>kuchnie na wymiar</small></span></a><p>Projektujemy i wykonujemy meble na wymiar w Krakowie i Małopolsce.</p><div class="footer-links"><div><b>Odkrywaj</b><a href="#realizacje">Realizacje</a><a href="#oferta">Oferta</a><a href="#proces">O nas</a></div><div><b>Kontakt</b><a href="tel:+48500190290">Telefon</a><a href="mailto:studio@forma-kuchnie.pl">E-mail</a><a href="#kontakt">Instagram</a></div></div></div>
+      <div class="footer-main container"><a class="brand footer-brand" href="#top"><svg viewBox="0 0 34 34"><path d="M5 5h24v24H5zM11 11h12v12H11z"/></svg><span>FORMA<small>kuchnie na wymiar</small></span></a><p>Projektujemy i wykonujemy meble na wymiar w Krakowie i Małopolsce.</p><div class="footer-links"><div><b>Odkrywaj</b><a href="#realizacje">Realizacje</a><a href="#poradnik">Poradnik</a><a href="#pytania">Pytania</a></div><div><b>Kontakt</b><a href="tel:+48500190290">Telefon</a><a href="mailto:studio@forma-kuchnie.pl">E-mail</a><a href="admin.html">Panel redakcyjny</a></div></div></div>
       <div class="footer-bottom container"><span>© 2026 FORMA. Wszystkie prawa zastrzeżone.</span><div><a href="#">Polityka prywatności</a><a href="#">Cookies</a></div><a href="#top">Do góry ↑</a></div>
     </footer>
     <a class="floating-contact" href="#kontakt" aria-label="Napisz do nas"><span>✦</span><b>Porozmawiajmy</b></a>
     <div class="toast" id="toast" role="status">Dziękujemy! Odezwemy się w ciągu 1 dnia roboczego.</div>
+    <dialog class="project-dialog" id="project-dialog"><button class="dialog-close" data-close-dialog aria-label="Zamknij">×</button><div class="project-dialog-image"><img id="dialog-project-image" src="assets/hero-kitchen.jpg" alt=""></div><div class="project-dialog-copy"><p class="eyebrow"><span></span> Realizacja <b id="dialog-project-number">01</b></p><h2 id="dialog-project-title"></h2><p id="dialog-project-description"></p><dl><div><dt>Lokalizacja</dt><dd id="dialog-project-location"></dd></div><div><dt>Materiały</dt><dd id="dialog-project-material"></dd></div><div><dt>Czas realizacji</dt><dd>9 tygodni</dd></div></dl><div class="dialog-nav"><button id="project-prev" type="button">← Poprzednia</button><button id="project-next" type="button">Następna →</button></div></div></dialog>
+    <dialog class="form-dialog" id="question-dialog"><button class="dialog-close" data-close-dialog aria-label="Zamknij">×</button><p class="eyebrow"><span></span> Twoje pytanie</p><h2>Co chcesz wiedzieć?</h2><form id="question-form"><label>Imię<input name="author" required placeholder="Jak mamy się zwracać?"></label><label>Kategoria<select name="category"><option value="koszt">Koszt i wycena</option><option value="materialy">Materiały</option><option value="realizacja">Realizacja i montaż</option></select></label><label>Pytanie<textarea name="question" required rows="4" placeholder="Opisz możliwie konkretnie…"></textarea></label><button class="btn btn-primary" type="submit">Wyślij do odpowiedzi <span>→</span></button></form></dialog>
+    <dialog class="form-dialog" id="review-dialog"><button class="dialog-close" data-close-dialog aria-label="Zamknij">×</button><p class="eyebrow"><span></span> Twoja opinia</p><h2>Jak nam poszło?</h2><form id="review-form"><label>Imię lub imiona<input name="author" required placeholder="np. Marta i Paweł"></label><label>Miasto<input name="city" required placeholder="np. Kraków"></label><label>Ocena<select name="rating"><option value="5">5 — świetnie</option><option value="4">4 — bardzo dobrze</option><option value="3">3 — dobrze</option><option value="2">2 — przeciętnie</option><option value="1">1 — słabo</option></select></label><label>Opinia<textarea name="text" required rows="4" placeholder="Co było dla Ciebie najważniejsze?"></textarea></label><button class="btn btn-primary" type="submit">Dodaj opinię <span>→</span></button></form></dialog>
+    <script src="content-store.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
