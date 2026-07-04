@@ -55,6 +55,7 @@ function listen(port, attemptsLeft = 10) {
   server.once("error", error => {
     if (error.code === "EADDRINUSE" && attemptsLeft > 0) {
       console.warn(`Port ${port} jest zajęty — próbuję ${port + 1}…`);
+      server.removeAllListeners("listening");
       listen(port + 1, attemptsLeft - 1);
       return;
     }
