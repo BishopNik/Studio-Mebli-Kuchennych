@@ -27,8 +27,10 @@ function resolveRequestPath(requestUrl = "/") {
   const safePath = normalize(requested).replace(/^(\.\.(\/|\\|$))+/, "");
   const filePath = join(root, safePath);
 
-  if (!filePath.startsWith(root) || !existsSync(filePath) || statSync(filePath).isDirectory()) {
-    return join(root, "index.html");
+  if (!filePath.startsWith(root)) return null;
+
+  if (!existsSync(filePath) || statSync(filePath).isDirectory()) {
+    return extname(pathname) ? null : join(root, "index.html");
   }
 
   return filePath;
@@ -36,6 +38,13 @@ function resolveRequestPath(requestUrl = "/") {
 
 const server = createServer((request, response) => {
   const filePath = resolveRequestPath(request.url);
+
+  if (!filePath) {
+    response.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
+    response.end("Nie znaleziono pliku.");
+    return;
+  }
+
   const contentType = mimeTypes[extname(filePath).toLowerCase()] || "application/octet-stream";
 
   response.writeHead(200, {
