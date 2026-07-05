@@ -111,13 +111,47 @@ document.querySelectorAll("[data-question-category]").forEach(button => button.a
 }));
 renderQuestions();
 
-function renderReviews() {
-  const reviews = store.read("reviews").filter(item => item.approved);
-  const average = reviews.length ? reviews.reduce((sum, item) => sum + Number(item.rating), 0) / reviews.length : 0;
-  document.querySelector("#rating-average").textContent = average.toFixed(1);
-  document.querySelector("#reviews-list").innerHTML = reviews.slice(0, 6).map(item => `
-    <article class="review-card"><div class="review-stars">${"★".repeat(item.rating)}${"☆".repeat(5 - item.rating)}</div><blockquote>“${escapeHtml(item.text)}”</blockquote><div><strong>${escapeHtml(item.author)}</strong><span>${escapeHtml(item.city)} · ${formatDate(item.date)}</span></div></article>`).join("");
+let activeReviewRating = "all";
+let reviewPage = 0;
+const reviewPageSize = () => window.innerWidth <= 620 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+
+function reviewTimestamp(item) {
+  const idTimestamp = Number(String(item.id).split("-").pop());
+  return Number.isFinite(item.createdAt) ? item.createdAt : Number.isFinite(idTimestamp) && idTimestamp > 1000000000000 ? idTimestamp : new Date(item.date).getTime();
 }
+
+function renderReviews() {
+  const allReviews = store.read("reviews").sort((a, b) => reviewTimestamp(b) - reviewTimestamp(a));
+  const verifiedReviews = allReviews.filter(item => item.approved);
+  const average = verifiedReviews.length ? verifiedReviews.reduce((sum, item) => sum + Number(item.rating), 0) / verifiedReviews.length : 0;
+  document.querySelector("#rating-average").textContent = average.toFixed(1);
+  const filteredReviews = activeReviewRating === "all" ? allReviews : allReviews.filter(item => Number(item.rating) === Number(activeReviewRating));
+  const pages = Math.max(1, Math.ceil(filteredReviews.length / reviewPageSize()));
+  reviewPage = Math.min(reviewPage, pages - 1);
+  const visibleReviews = filteredReviews.slice(reviewPage * reviewPageSize(), (reviewPage + 1) * reviewPageSize());
+
+  document.querySelector("#reviews-list").innerHTML = visibleReviews.map(item => `
+    <article class="review-card">
+      <div class="review-card-top"><div class="review-stars">${"★".repeat(item.rating)}${"☆".repeat(5 - item.rating)}</div>${item.approved ? "" : '<span class="review-pending">Czeka na moderację</span>'}</div>
+      <blockquote>“${escapeHtml(item.text)}”</blockquote>
+      <div><strong>${escapeHtml(item.author)}</strong><span>${escapeHtml(item.city)} · ${formatDate(item.date)}</span></div>
+    </article>`).join("") || '<p class="reviews-empty">Brak opinii z taką oceną.</p>';
+
+  document.querySelector("#review-page-info").textContent = `${reviewPage + 1} / ${pages} · ${filteredReviews.length} ${filteredReviews.length === 1 ? "opinia" : "opinii"}`;
+  document.querySelector("#review-prev").disabled = reviewPage === 0;
+  document.querySelector("#review-next").disabled = reviewPage >= pages - 1;
+}
+
+document.querySelectorAll("[data-review-rating]").forEach(button => button.addEventListener("click", () => {
+  document.querySelector(".review-filters .active")?.classList.remove("active");
+  button.classList.add("active");
+  activeReviewRating = button.dataset.reviewRating;
+  reviewPage = 0;
+  renderReviews();
+}));
+document.querySelector("#review-prev").addEventListener("click", () => { reviewPage = Math.max(0, reviewPage - 1); renderReviews(); });
+document.querySelector("#review-next").addEventListener("click", () => { reviewPage += 1; renderReviews(); });
+window.addEventListener("resize", () => { reviewPage = 0; renderReviews(); });
 renderReviews();
 
 document.querySelectorAll("[data-open-dialog]").forEach(button => button.addEventListener("click", () => document.querySelector(`#${button.dataset.openDialog}`).showModal()));
@@ -138,10 +172,16 @@ document.querySelector("#question-form").addEventListener("submit", event => {
 document.querySelector("#review-form").addEventListener("submit", event => {
   event.preventDefault();
   const data = new FormData(event.currentTarget);
-  store.add("reviews", { author: data.get("author"), city: data.get("city"), rating: Number(data.get("rating")), text: data.get("text"), approved: false, date: new Date().toISOString().slice(0, 10) });
+  store.add("reviews", { author: data.get("author"), city: data.get("city"), rating: Number(data.get("rating")), text: data.get("text"), approved: false, date: new Date().toISOString().slice(0, 10), createdAt: Date.now() });
   event.currentTarget.reset();
   event.currentTarget.closest("dialog").close();
-  showToast("Dziękujemy! Opinia czeka na krótką weryfikację.");
+  activeReviewRating = "all";
+  reviewPage = 0;
+  document.querySelector(".review-filters .active")?.classList.remove("active");
+  document.querySelector('[data-review-rating="all"]').classList.add("active");
+  renderReviews();
+  document.querySelector("#opinie").scrollIntoView({ behavior: "smooth" });
+  showToast("Dziękujemy! Twoja opinia jest pierwsza i czeka na weryfikację.");
 });
 
 document.querySelector("#status-form").addEventListener("submit", event => {

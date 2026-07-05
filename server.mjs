@@ -49,7 +49,7 @@ const server = createServer((request, response) => {
 
   response.writeHead(200, {
     "Content-Type": contentType,
-    "Cache-Control": filePath.endsWith("index.html") ? "no-cache" : "public, max-age=3600"
+    "Cache-Control": [".html", ".css", ".js", ".mjs"].includes(extname(filePath).toLowerCase()) ? "no-cache" : "public, max-age=3600"
   });
 
   if (request.method === "HEAD") {

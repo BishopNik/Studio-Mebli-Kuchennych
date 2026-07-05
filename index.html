@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260704-2" />
   </head>
   <body>
     <header class="site-header" id="top">
@@ -149,6 +149,11 @@
             <div><p class="eyebrow"><span></span> Głosy klientów</p><h2>Wasze wnętrza.<br/><em>Wasze opinie.</em></h2></div>
             <div class="rating-summary"><strong id="rating-average">4.9</strong><span class="stars">★★★★★</span><small>zweryfikowane realizacje</small></div>
           </div>
+          <div class="review-toolbar">
+            <div class="review-filters" role="group" aria-label="Filtruj opinie według oceny"><button class="active" type="button" data-review-rating="all">Wszystkie</button><button type="button" data-review-rating="5">5 ★</button><button type="button" data-review-rating="4">4 ★</button><button type="button" data-review-rating="3">3 ★</button><button type="button" data-review-rating="2">2 ★</button><button type="button" data-review-rating="1">1 ★</button></div>
+            <span id="review-page-info">1 / 1</span>
+            <div class="review-pagination"><button id="review-prev" type="button" aria-label="Poprzednie opinie">←</button><button id="review-next" type="button" aria-label="Następne opinie">→</button></div>
+          </div>
           <div class="reviews-grid" id="reviews-list" aria-live="polite"></div>
           <button class="btn btn-outline center-button" type="button" data-open-dialog="review-dialog">Dodaj swoją opinię <span>＋</span></button>
         </div>
@@ -197,7 +202,7 @@
     <dialog class="project-dialog" id="project-dialog"><button class="dialog-close" data-close-dialog aria-label="Zamknij">×</button><div class="project-dialog-image"><img id="dialog-project-image" src="assets/hero-kitchen.jpg" alt=""></div><div class="project-dialog-copy"><p class="eyebrow"><span></span> Realizacja <b id="dialog-project-number">01</b></p><h2 id="dialog-project-title"></h2><p id="dialog-project-description"></p><dl><div><dt>Lokalizacja</dt><dd id="dialog-project-location"></dd></div><div><dt>Materiały</dt><dd id="dialog-project-material"></dd></div><div><dt>Czas realizacji</dt><dd>9 tygodni</dd></div></dl><div class="dialog-nav"><button id="project-prev" type="button">← Poprzednia</button><button id="project-next" type="button">Następna →</button></div></div></dialog>
     <dialog class="form-dialog" id="question-dialog"><button class="dialog-close" data-close-dialog aria-label="Zamknij">×</button><p class="eyebrow"><span></span> Twoje pytanie</p><h2>Co chcesz wiedzieć?</h2><form id="question-form"><label>Imię<input name="author" required placeholder="Jak mamy się zwracać?"></label><label>Kategoria<select name="category"><option value="koszt">Koszt i wycena</option><option value="materialy">Materiały</option><option value="realizacja">Realizacja i montaż</option></select></label><label>Pytanie<textarea name="question" required rows="4" placeholder="Opisz możliwie konkretnie…"></textarea></label><button class="btn btn-primary" type="submit">Wyślij do odpowiedzi <span>→</span></button></form></dialog>
     <dialog class="form-dialog" id="review-dialog"><button class="dialog-close" data-close-dialog aria-label="Zamknij">×</button><p class="eyebrow"><span></span> Twoja opinia</p><h2>Jak nam poszło?</h2><form id="review-form"><label>Imię lub imiona<input name="author" required placeholder="np. Marta i Paweł"></label><label>Miasto<input name="city" required placeholder="np. Kraków"></label><label>Ocena<select name="rating"><option value="5">5 — świetnie</option><option value="4">4 — bardzo dobrze</option><option value="3">3 — dobrze</option><option value="2">2 — przeciętnie</option><option value="1">1 — słabo</option></select></label><label>Opinia<textarea name="text" required rows="4" placeholder="Co było dla Ciebie najważniejsze?"></textarea></label><button class="btn btn-primary" type="submit">Dodaj opinię <span>→</span></button></form></dialog>
-    <script src="content-store.js"></script>
-    <script src="script.js"></script>
+    <script src="content-store.js?v=20260704-2"></script>
+    <script src="script.js?v=20260704-2"></script>
   </body>
 </html>
